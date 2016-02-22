@@ -1,24 +1,28 @@
 package my.krbmod.letsmodreboot;
 
+import my.krbmod.letsmodreboot.proxy.IProxy;
+import my.krbmod.letsmodreboot.reference.Reference;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
+import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = LetsModReboot.MODID, name = LetsModReboot.NAME, version = LetsModReboot.VERSION) 
+@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION) 
 public class LetsModReboot {
 
-	   public static final String MODID = "letsmodreboot";
-	   public static final String NAME = "Lets Mod Reboot";
-	   public static final String VERSION = "1.8.9-1.0";
 	   
-	   @Instance(MODID)
+	   @Instance(Reference.MOD_ID)
 	   public static LetsModReboot instance;
+
+	   @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, 
+			   serverSide = Reference.SERVER_PROXY_CLASS)
+	   public static IProxy proxy;
 	   
 	   @EventHandler
-	   public void init(FMLPreInitializationEvent event)
+	   public void preInit(FMLPreInitializationEvent event)
 	  
 	    {
 			// some example code
@@ -33,7 +37,7 @@ public class LetsModReboot {
 	   }
 
 	   @EventHandler
-	   public void init(FMLPostInitializationEvent event)
+	   public void postInit(FMLPostInitializationEvent event)
 	   {
 
 	   }

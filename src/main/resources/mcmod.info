@@ -3,7 +3,7 @@
   "modid": "letsmodreboot",
   "name": "Lets Mod Reboot",
   "description": "Source code for Lets Mod Reboot.",
-  "version": "${version}",
+  "version": "1.8.9-1.0",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
