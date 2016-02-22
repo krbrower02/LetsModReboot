@@ -1,0 +1,16 @@
+[
+{
+  "modid": "letsmodreboot",
+  "name": "Lets Mod Reboot",
+  "description": "Source code for Lets Mod Reboot.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["KRB"],
+  "credits": "Pahimar's Tutorial",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
