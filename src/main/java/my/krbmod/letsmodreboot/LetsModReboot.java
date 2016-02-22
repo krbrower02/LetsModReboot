@@ -1,7 +1,10 @@
 package my.krbmod.letsmodreboot;
 
+import my.krbmod.letsmodreboot.handler.ConfigurationHandler;
 import my.krbmod.letsmodreboot.proxy.IProxy;
 import my.krbmod.letsmodreboot.reference.Reference;
+import my.krbmod.letsmodreboot.utility.LogHelper;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -10,7 +13,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION) 
+@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, guiFactory = Reference.GUI_FACTORY_CLASS) 
 public class LetsModReboot {
 
 	   
@@ -25,20 +28,23 @@ public class LetsModReboot {
 	   public void preInit(FMLPreInitializationEvent event)
 	  
 	    {
-			// some example code
-		   // More Code
+			ConfigurationHandler.init(event.getSuggestedConfigurationFile());
+			FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
+			LogHelper.info("Pre Initialization Complete");
 	    }
 	   
 
 	   @EventHandler
 	   public void init(FMLInitializationEvent event)
 	   {
+			LogHelper.info("Initialization Complete");
 
 	   }
 
 	   @EventHandler
 	   public void postInit(FMLPostInitializationEvent event)
 	   {
+			LogHelper.info("Post Initialization Complete");
 
 	   }
 
